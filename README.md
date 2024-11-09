@@ -20,20 +20,20 @@ The following Python libraries are required:
 - `requests`: For making API calls to the LiteLLM server.
 - `json`: For handling JSON data (part of the Python standard library).
 - `random`: For random number generation (part of the Python standard library).
-- `matplotlib` (optional, for visualization if using the flowchart).
 
 You can install `requests` using:
 ```bash
 pip install requests
 ```
 
-If you want to generate flowcharts for presentations, install `matplotlib`:
-```bash
-pip install matplotlib
-```
+### LiteLLM, Ollama, and Autogen Setup
+1. **LiteLLM**: This system uses the LiteLLM server to handle API requests for language model completions. Ensure the LiteLLM server is running locally and accessible through the `LITELLM_BASE_URL` in the code. 
 
-### LiteLLM Model Setup
-Ensure that the LiteLLM server is running locally, and accessible via the `LITELLM_BASE_URL` specified in the code. The default setting is:
+2. **Ollama**: Ollama is a model package used in conjunction with LiteLLM. In this project, `"ollama/llama3.2:latest"` is used as the model configuration for the agents to interact with the organizer and contribute their responses.
+
+3. **Autogen**: Autogen is an additional library that can provide automated processes and generation capabilities within the project. Initialize it as needed in your LiteLLM configuration for customized workflows.
+
+The default LiteLLM configuration in the code is:
 ```python
 LITELLM_BASE_URL = "http://0.0.0.0:4000"  # Modify if the server is hosted elsewhere
 MODEL_NAME = "ollama/llama3.2:latest"
